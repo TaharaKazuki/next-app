@@ -1,1 +1,1 @@
-React native2_
+React native2
