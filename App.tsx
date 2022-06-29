@@ -1,13 +1,12 @@
 import { StatusBar } from 'expo-status-bar'
-import { View } from 'react-native'
-import PlannerScreen from './screens/PlannerScreen'
+import Navigation from './navigation'
 
 const App = () => {
   return (
-    <View>
-      <PlannerScreen />
+    <>
+      <Navigation />
       <StatusBar style="auto" />
-    </View>
+    </>
   )
 }
 
