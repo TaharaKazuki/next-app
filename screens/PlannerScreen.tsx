@@ -1,9 +1,15 @@
-import { View, Text } from 'react-native'
+import { useEffect } from 'react'
+import { View, Text, Button } from 'react-native'
 
-const PlannerScreen = () => {
+const PlannerScreen = ({ navigation }: any) => {
+  useEffect(() => {
+    console.info('Rending Planner Screen')
+  }, [])
+
   return (
     <View>
       <Text>I am Planner screen</Text>
+      <Button title="Go to Home" onPress={() => navigation.push('Home')} />
     </View>
   )
 }
