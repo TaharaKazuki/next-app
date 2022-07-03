@@ -1,7 +1,8 @@
 import { useEffect } from 'react'
 import { View, Text, Button } from 'react-native'
+import { NativeStackHeaderProps } from '@react-navigation/native-stack'
 
-const HomeScreen = ({ navigation }: any) => {
+const HomeScreen = ({ navigation }: NativeStackHeaderProps) => {
   useEffect(() => {
     console.info('Rending Home Screen')
   }, [])
