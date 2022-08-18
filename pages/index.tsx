@@ -15,7 +15,7 @@ const Home: NextPage = () => {
                 roundedCircle={true}
                 width={64}
                 height={64}
-                className="mr-3"
+                className="me-3"
                 src="https://avatars.githubusercontent.com/u/15259879?v=4"
                 alt="Generic placeholder"
               />
@@ -41,7 +41,7 @@ const Home: NextPage = () => {
                   <Card.Header className="d-flex flex-row">
                     <Image
                       src={'https://via.placeholder.com/150'}
-                      className="rounded-circle mr-3"
+                      className="rounded-circle me-3"
                       height="50px"
                       width="50px"
                       alt="avatar"
@@ -69,7 +69,7 @@ const Home: NextPage = () => {
                   <Card.Header className="d-flex flex-row">
                     <Image
                       src={'https://via.placeholder.com/150'}
-                      className="rounded-circle mr-3"
+                      className="rounded-circle me-3"
                       height="50px"
                       width="50px"
                       alt="avatar"
