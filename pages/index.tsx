@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import { Container, Row, Col, Image, Card } from 'react-bootstrap'
-import { BlogNavbar as Navbar } from '../components/Navbar'
+import { BlogNavbar as Navbar } from 'components/Navbar'
 
 const Home: NextPage = () => {
   return (
