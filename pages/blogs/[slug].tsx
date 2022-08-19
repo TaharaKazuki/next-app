@@ -18,7 +18,7 @@ const BlogDetail: NextPage<Props> = ({ blog }) => {
 
 export default BlogDetail
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
   const { params } = context
   const blog = await getBlogBySlug(params!.slug as string)
   return {
