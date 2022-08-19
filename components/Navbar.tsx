@@ -7,7 +7,7 @@ export const BlogNavbar = () => {
         <a href="#">Tahara Kazuki</a>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
+      <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
         <Nav className="ml-auto">
           <Nav.Link className="fj-navbar-item fj-navbar-link" href="/">
             Home

@@ -13,7 +13,7 @@ const Home: NextPage = () => {
       <AuthorInfo />
       <hr />
       <Row className="mb-5">
-        <Col className="md-10">
+        <Col md="10">
           <CardListItem />
         </Col>
         <Col md="4">
