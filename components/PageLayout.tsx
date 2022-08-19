@@ -14,8 +14,6 @@ export const PageLayout: FC<Props> = ({ className, children }) => {
       <div className={`page-wrapper ${className}`}>{children}</div>
       <footer className="page-footer">
         <div>
-          <a href="#">courses</a>
-          {' | '}
           <a href="#">github</a>
           {' | '}
           <a href="#">facebook</a>
