@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import { Card, Image } from 'react-bootstrap'
+import Link from 'next/link'
 
 type Props = {
   title: string
@@ -10,9 +11,13 @@ type Props = {
     name: string
     avatar: string
   }
+  link: {
+    href: string
+    as: string
+  }
 }
 
-export const CardItem: FC<Props> = ({ title, subTitle, date, coverImage: image, author }) => {
+export const CardItem: FC<Props> = ({ title, subTitle, date, coverImage: image, author, link }) => {
   const { name, avatar } = author
   return (
     <Card className={`fj-card`}>
@@ -38,7 +43,11 @@ export const CardItem: FC<Props> = ({ title, subTitle, date, coverImage: image, 
           <Card.Text>{subTitle}</Card.Text>
         </Card.Body>
       </div>
-      <a className="card-button">Read More</a>
+      {link && (
+        <Link {...link}>
+          <a className="card-button">Read More</a>
+        </Link>
+      )}
     </Card>
   )
 }

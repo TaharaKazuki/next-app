@@ -20,6 +20,10 @@ export type blogProps = {
       name: string
       avatar: string
     }
+    link: {
+      href: string
+      as: string
+    }
   }[]
 }
 
@@ -35,7 +39,13 @@ const Home: NextPage<blogProps> = ({ blogs }) => {
         </Col> */}
         {blogs.map((blog) => (
           <Col key={blog.slug} md="4">
-            <CardItem {...blog} />
+            <CardItem
+              {...blog}
+              link={{
+                href: `/blogs/[slug]`,
+                as: `/blogs/${blog.slug}`,
+              }}
+            />
           </Col>
         ))}
       </Row>
