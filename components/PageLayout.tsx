@@ -1,4 +1,5 @@
 import { Container } from 'react-bootstrap'
+import Head from 'next/head'
 import { BlogNavbar as Navbar } from 'components/Navbar'
 import { FC, ReactNode } from 'react'
 
