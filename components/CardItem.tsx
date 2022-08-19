@@ -1,7 +1,12 @@
 import { FC } from 'react'
 import { Card, Image } from 'react-bootstrap'
 
-export const CardItem: FC = () => {
+type Props = {
+  title: string
+  subTitle: string
+}
+
+export const CardItem: FC<Props> = ({ title, subTitle }) => {
   return (
     <Card className={`fj-card`}>
       <div className="card-body-wrapper">
@@ -14,8 +19,8 @@ export const CardItem: FC = () => {
             alt="avatar"
           />
           <div>
-            <Card.Title className="font-weight-bold mb-1">Placeholder Author</Card.Title>
-            <Card.Text className="card-date">Placeholder Date</Card.Text>
+            <Card.Title className="font-weight-bold mb-1">{title}</Card.Title>
+            <Card.Text className="card-date">{subTitle}</Card.Text>
           </div>
         </Card.Header>
         <div className="view overlay">
@@ -23,7 +28,7 @@ export const CardItem: FC = () => {
         </div>
         <Card.Body>
           <Card.Title className="card-main-title">Placeholder Title</Card.Title>
-          <Card.Text>Placehodler Subtitle</Card.Text>
+          <Card.Text>Placehodler subTitle</Card.Text>
         </Card.Body>
       </div>
       <a className="card-button">Read More</a>

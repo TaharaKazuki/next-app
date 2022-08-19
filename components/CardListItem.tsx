@@ -20,7 +20,7 @@ export const CardListItem: FC = () => {
         </Card.Header>
         <Card.Body>
           <Card.Title className="card-main-title">Placeholder Title</Card.Title>
-          <Card.Text>Placehodler Subtitle</Card.Text>
+          <Card.Text>Placehodler subTitle</Card.Text>
         </Card.Body>
       </div>
       <a href="#" className="card-button">

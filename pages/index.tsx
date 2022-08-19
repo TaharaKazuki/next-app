@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import type { NextPage, GetStaticProps } from 'next'
 import { Container, Row, Col } from 'react-bootstrap'
 
 import { PageLayout } from '@/components/PageLayout'
@@ -7,21 +7,43 @@ import { AuthorInfo } from '@/components/AuthorInfo'
 import { CardItem } from '@/components/CardItem'
 import { CardListItem } from '@/components/CardListItem'
 
-const Home: NextPage = () => {
+import { getAllBlogs } from 'lib/api'
+
+export type blogProps = {
+  blogs: {
+    title: string
+    subTitle: string
+    slug: string
+  }[]
+}
+
+const Home: NextPage<blogProps> = ({ blogs }) => {
+  console.info(blogs)
   return (
     <PageLayout>
       <AuthorInfo />
       <hr />
       <Row className="mb-5">
-        <Col md="10">
+        {/* <Col md="10">
           <CardListItem />
-        </Col>
-        <Col md="4">
-          <CardItem />
-        </Col>
+        </Col> */}
+        {blogs.map((blog) => (
+          <Col key={blog.slug} md="4">
+            <CardItem title={blog.title} subTitle={blog.subTitle} />
+          </Col>
+        ))}
       </Row>
     </PageLayout>
   )
 }
 
 export default Home
+
+export const getStaticProps: GetStaticProps<blogProps> = async () => {
+  const blogs = await getAllBlogs()
+  return {
+    props: {
+      blogs,
+    },
+  }
+}
