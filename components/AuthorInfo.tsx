@@ -14,7 +14,6 @@ export const AuthorInfo = () => {
             alt="Generic placeholder"
           />
           <Card.Body>
-            <h5 className="font-weight-bold mb-0">Hello Friends,</h5>
             <p className="welcome-text">
               My name is Tahara Kazuki and I am an frontend engineer and freelance developer. and
               this is my blog page.
