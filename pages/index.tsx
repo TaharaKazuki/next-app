@@ -16,6 +16,10 @@ export type blogProps = {
     slug: string
     date: string
     coverImage: string
+    author: {
+      name: string
+      avatar: string
+    }
   }[]
 }
 

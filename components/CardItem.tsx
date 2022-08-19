@@ -6,22 +6,27 @@ type Props = {
   subTitle: string
   date: string
   coverImage: string
+  author: {
+    name: string
+    avatar: string
+  }
 }
 
-export const CardItem: FC<Props> = ({ title, subTitle, date, coverImage: image }) => {
+export const CardItem: FC<Props> = ({ title, subTitle, date, coverImage: image, author }) => {
+  const { name, avatar } = author
   return (
     <Card className={`fj-card`}>
       <div className="card-body-wrapper">
         <Card.Header className="d-flex flex-row">
           <Image
-            src={'https://via.placeholder.com/150'}
+            src={avatar || 'https://via.placeholder.com/150'}
             className="rounded-circle me-3"
             height="50px"
             width="50px"
             alt="avatar"
           />
           <div>
-            <Card.Title className="font-weight-bold mb-1">Placeholder Author</Card.Title>
+            <Card.Title className="font-weight-bold mb-1">{name || 'not defined'}</Card.Title>
             <Card.Text className="card-date">{date}</Card.Text>
           </div>
         </Card.Header>
