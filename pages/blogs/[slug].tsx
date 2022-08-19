@@ -1,14 +1,27 @@
+import type { NextPage, GetServerSideProps } from 'next'
 import { PageLayout } from '@/components/PageLayout'
-import { useRouter } from 'next/router'
+import { getBlogBySlug } from 'lib/api'
 
-const BlogDetail = () => {
-  const { query } = useRouter()
+type Props = {
+  blog: {
+    slug: string
+  }
+}
 
+const BlogDetail: NextPage<Props> = ({ blog }) => {
   return (
     <PageLayout>
-      <h1>Hello Detail Page - {query?.slug}</h1>
+      <h1>Hello Detail Page - {blog?.slug}</h1>
     </PageLayout>
   )
 }
 
 export default BlogDetail
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { params } = context
+  const blog = await getBlogBySlug(params!.slug as string)
+  return {
+    props: { blog },
+  }
+}
