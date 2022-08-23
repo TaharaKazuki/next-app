@@ -29,12 +29,17 @@ export type blogProps = {
 
 const Home: NextPage<blogProps> = ({ blogs }) => {
   const [filter, setFilter] = useState({
-    view: { list: 1 },
+    view: { list: 0 },
   })
   return (
     <PageLayout>
       <AuthorInfo />
-      <FilteringMenu onChange={() => {}} />
+      <FilteringMenu
+        filter={filter}
+        onChange={(option, value) => {
+          setFilter({ ...filter, [option]: value })
+        }}
+      />
       <hr />
       <Row className="mb-5">
         {/* <Col md="10">
@@ -42,7 +47,7 @@ const Home: NextPage<blogProps> = ({ blogs }) => {
         </Col> */}
         {blogs.map((blog) =>
           filter.view.list ? (
-            <Col md="9">
+            <Col key={`${blog.slug}-list`} md="9">
               <CardListItem />
             </Col>
           ) : (
