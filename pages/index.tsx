@@ -48,7 +48,13 @@ const Home: NextPage<blogProps> = ({ blogs }) => {
         {blogs.map((blog) =>
           filter.view.list ? (
             <Col key={`${blog.slug}-list`} md="9">
-              <CardListItem />
+              <CardListItem
+                {...blog}
+                link={{
+                  href: `/blogs/[slug]`,
+                  as: `/blogs/${blog.slug}`,
+                }}
+              />
             </Col>
           ) : (
             <Col key={blog.slug} md="4">
